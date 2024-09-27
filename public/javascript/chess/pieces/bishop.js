@@ -26,6 +26,7 @@ Bishop.prototype.isValidMove = function(targetPosition) {
     let colCheck = currentCol.charCodeAt(0) + colStep;
     let rowCheck = currentRow + rowStep;
 
+    // Ensure the loop condition checks both directions correctly
     while (colCheck !== targetCol.charCodeAt(0) && rowCheck !== targetRow) {
         let pieceOnPath = this.board.getPieceAt({
             col: String.fromCharCode(colCheck),
@@ -52,6 +53,7 @@ Bishop.prototype.isValidMove = function(targetPosition) {
 
     return true; // Valid move
 };
+
 
 Bishop.prototype.moveTo = function(targetPosition) {
     const result = this.isValidMove(targetPosition);
